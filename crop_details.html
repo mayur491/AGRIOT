@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Agrox | Crop Water</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+        <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+        <link rel="stylesheet" href="css1/style.css" type="text/css" media="all">
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+        <script type="text/javascript" src="js/jquery-1.6.js"></script>
+        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="js/tms-0.3.js"></script>
+        <script type="text/javascript" src="js/tms_presets.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <link rel="icon" type="image/png" href="table/images/icons/itachi.ico"/>
+
+        <style>
+
+            .overlay {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: rgb(0,0,0);
+                background-color: rgba(0,0,0, 0.9);
+                overflow-x: hidden;
+                transition: 0.5s;
+            }
+
+            .overlay-content {
+                position: relative;
+                top: 25%;
+                width: 100%;
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            .overlay a {
+                padding: 8px;
+                text-decoration: none;
+                font-size: 36px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+            .overlay a:hover, .overlay a:focus {
+                color: #f1f1f1;
+            }
+
+            .overlay .closebtn {
+                position: absolute;
+                top: 20px;
+                right: 45px;
+                font-size: 60px;
+            }
+
+            @media screen and (max-height: 450px) {
+                .overlay a {font-size: 20px}
+                .overlay .closebtn {
+                    font-size: 40px;
+                    top: 15px;
+                    right: 35px;
+                }
+            }
+        </style>
+    </head>
+    <body id="page2">
+        <div class="body1">
+            <div class="main">
+                <!--header -->
+                <header>
+                    <div class="wrapper">
+                        <h1><a href="index.php" id="logo">Agrox Agriculture Company</a></h1>
+                        <nav>
+                            <ul id="menu">
+                                <li><a href="index.php">Home</a></li>
+                                <li><a href="DataEntry.html">Crop Water</a></li>
+                                <li><a href="fertilizers.html">Fertilizer</a></li>
+                                <li><a href="irrigation.php">Irrigation</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+                <!-- / header -->
+                <!-- content -->
+
+                <span style="font-size:30px; cursor:pointer" onclick="openNav()">&#9776; <b>Crops</b></span>
+
+                <div id="myNav" class="overlay">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div class="overlay-content">
+                        <a href="#1">Wheat</a><br>
+                        <a href="#2">Sorghum</a><br>
+                        <a href="#3">Groundnut</a><br>
+                        <a href="#4">Cotton</a><br>
+                        <a href="#5">Rice</a><br>
+                    </div>
+                </div>
+
+                <div id="1">
+                    <article id="content">
+                        <div class="wrapper">
+                            <h2>Wheat</h2>
+                        </div>
+                    </article>
+                    <div class="body2">
+                        <div class="main">
+                            <article id="content2">
+                                <div class="wrapper"><br>
+                                    <img width="97.5%" src="images/indexPage/img1.jpg" alt="">
+                                    <h3 style="text-align:justify">
+                                        Wheat is a grass widely cultivated for its seed, a cereal grain which is a worldwide staple food. There are many species of wheat which together make up the 
+                                        genus Triticum; the most widely grown is common wheat. The archaeological record suggests that wheat was first cultivated in the regions of the Fertile 
+                                        Crescent around 9600 BCE. Botanically, the wheat kernel is a type of fruit called a caryopsis. Wheat is grown on more land area than any other food crop 
+                                        (220.4 million hectares, 2014). World trade in wheat is greater than for all other crops combined. In 2016, world production of wheat was 749 million tonnes, 
+                                        making it the second most-produced cereal after maize. Since 1960, world production of wheat and other grain crops has tripled and is expected to grow further 
+                                        through the middle of the 21st century. Global demand for wheat is increasing due to the unique viscoelastic and adhesive properties of gluten proteins, which 
+                                        facilitate the production of processed foods, whose consumption is increasing as a result of the worldwide industrialization process and the westernization of 
+                                        the diet. Wheat is an important source of carbohydrates. Globally, it is the leading source of vegetal protein in human food, having a protein content of about
+                                        13%, which is relatively high compared to other major cereals but relatively low in protein quality for supplying essential amino acids. When eaten as the 
+                                        whole grain, wheat is a source of multiple nutrients and dietary fiber. In a small part of the general population, gluten "the major part of wheat protein"
+                                        can trigger coeliac disease, non-coeliac gluten sensitivity, gluten ataxia and dermatitis herpetiformis.
+                                    </h3>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div><br><br><br><br>
+
+                
+
+                <div id="2">
+                    <article id="content">
+                        <div class="wrapper">
+                            <h2>Sorghum</h2>
+                        </div>
+                    </article>
+                    <div class="body2">
+                        <div class="main">
+                            <article id="content2">
+                                <div class="wrapper"><br>
+                                    <img width="97.5%" src="images/indexPage/img4.jpg" alt="">
+                                    <h3 style="text-align:justify">
+                                        Sorghum is a genus of flowering plants in the grass family Poaceae. Seventeen of the twenty-five species are native to Australia, with the range of some 
+                                        extending to Africa, Asia, Mesoamerica, and certain islands in the Indian and Pacific Oceans. One species is grown for grain, while many others are used as 
+                                        fodder plants, either cultivated in warm climates worldwide or naturalized, in pasture lands. Sorghum is in the subfamily Panicoideae and the tribe 
+                                        Andropogoneae (the tribe of big bluestem and sugarcane).
+                                    </h3>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div><br><br><br><br>
+                
+                <div id="3">
+                    <article id="content">
+                        <div class="wrapper">
+                            <h2>Groundnut</h2>
+                        </div>
+                    </article>
+                    <div class="body2">
+                        <div class="main">
+                            <article id="content2">
+                                <div class="wrapper"><br>
+                                    <img width="97.5%" src="images/indexPage/img5.jpg" alt="">
+                                    <h3 style="text-align:justify">
+                                        The peanut, also known as the groundnut and the goober and taxonomically classified as Arachis hypogaea, is a legume crop grown mainly for its edible seeds. 
+                                        It is widely grown in the tropics and subtropics, being important to both small and large commercial producers. It is classified as both a grain legume and,
+                                        because of its high oil content, an oil crop. World annual production of shelled peanuts was 42 million tonnes in 2014. Atypically among crop plants, peanut
+                                        pods develop underground rather than aboveground. It is this characteristic that the botanist Linnaeus used to assign the specific name hypogaea, which means
+                                        "under the earth." As a legume, the peanut belongs to the botanical family Fabaceae; this is also known as Leguminosae, and commonly known as the bean, or pea,
+                                        family. Like most other legumes, peanuts harbor symbiotic nitrogen-fixing bacteria in root nodules. This capacity to fix nitrogen means peanuts require less 
+                                        nitrogen-containing fertilizer and improve soil fertility, making them valuable in crop rotations. Peanuts are similar in taste and nutritional profile to tree
+                                        nuts such as walnuts and almonds, and as a culinary nut are often served in similar ways in Western cuisines. The botanical definition of a "nut" is a fruit 
+                                        whose ovary wall becomes very hard at maturity. Using this criterion, the peanut is not a true nut, but rather a legume. However, for culinary purposes and in 
+                                        common English language usage, peanuts are usually referred to as nuts.
+                                    </h3>
+                                </div>
+                            </article>
+                        </div>
+                    </div>  
+                </div><br><br><br><br>
+
+                <div id="4">
+                    <article id="content">
+                        <div class="wrapper">
+                            <h2>Cotton</h2>
+                        </div>
+                    </article>
+                    <div class="body2">
+                        <div class="main">
+                            <article id="content2">
+                                <div class="wrapper"><br>
+                                    <img width="97.5%" src="images/indexPage/img2.jpg" alt="">
+                                    <h3 style="text-align:justify">
+                                        Cotton is a soft, fluffy staple fiber that grows in a boll, or protective case, around the seeds of the cotton plants of the genus Gossypium in the mallow 
+                                        family Malvaceae. The fiber is almost pure cellulose. Under natural conditions, the cotton bolls will increase the dispersal of the seeds. The plant is a shrub
+                                        native to tropical and subtropical regions around the world, including the Americas, Africa, and India. The greatest diversity of wild cotton species is found
+                                        in Mexico, followed by Australia and Africa. Cotton was independently domesticated in the Old and New Worlds. The fiber is most often spun into yarn or thread 
+                                        and used to make a soft, breathable textile. The use of cotton for fabric is known to date to prehistoric times; fragments of cotton fabric dated from 5000 BC
+                                        have been excavated in Mexico and between 6000 BC and 5000 BC in the Indus Valley Civilization. Although cultivated since antiquity, it was the invention of 
+                                        the cotton gin that lowered the cost of production that led to its widespread use, and it is the most widely used natural fiber cloth in clothing today. 
+                                        Current estimates for world production are about 25 million tonnes or 110 million bales annually, accounting for 2.5% of the world's arable land. China is the
+                                        world's largest producer of cotton, but most of this is used domestically. The United States has been the largest exporter for many years. In the United States,
+                                        cotton is usually measured in bales, which measure approximately 0.48 cubic meters (17 cubic feet) and weigh 226.8 kilograms (500 pounds).
+                                    </h3>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div><br><br><br><br>
+
+                <div id="5">
+                    <article id="content">
+                        <div class="wrapper">
+                            <h2>Rice</h2>
+                        </div>
+                    </article>
+                    <div class="body2">
+                        <div class="main">
+                            <article id="content2">
+                                <div class="wrapper"><br>
+                                    <img width="97.5%" src="images/indexPage/img3.jpg" alt="">
+                                    <h3 style="text-align:justify">
+                                        Rice is the seed of the grass species Oryza sativa (Asian rice) or Oryza glaberrima (African rice). As a cereal grain, it is the most widely consumed staple 
+                                        food for a large part of the world's human population, especially in Asia. It is the agricultural commodity with the third-highest worldwide production (rice,
+                                        741.5 million tonnes in 2014), after sugarcane (1.9 billion tonnes) and maize (1.0 billion tonnes). Oryza sativa with small wind-pollinated flowers Since 
+                                        sizable portions of sugarcane and maize crops are used for purposes other than human consumption, rice is the most important grain with regard to human 
+                                        nutrition and caloric intake, providing more than one-fifth of the calories consumed worldwide by humans. There are many varieties of rice and culinary 
+                                        preferences tend to vary regionally. Cooked brown rice from Bhutan Rice can come in many shapes, colours and sizes. Rice, a monocot, is normally grown as an 
+                                        annual plant, although in tropical areas it can survive as a perennial and can produce a ratoon crop for up to 30 years. Rice cultivation is well-suited to 
+                                        countries and regions with low labor costs and high rainfall, as it is labor-intensive to cultivate and requires ample water. However, rice can be grown 
+                                        practically anywhere, even on a steep hill or mountain area with the use of water-controlling terrace systems. Although its parent species are native to Asia
+                                        and certain parts of Africa, centuries of trade and exportation have made it commonplace in many cultures worldwide. Oryza sativa, commonly known as Asian rice
+                                        The traditional method for cultivating rice is flooding the fields while, or after, setting the young seedlings. This simple method requires sound planning and
+                                        servicing of the water damming and channeling, but reduces the growth of less robust weed and pest plants that have no submerged growth state, and deters 
+                                        vermin. While flooding is not mandatory for the cultivation of rice, all other methods of irrigation require higher effort in weed and pest control during 
+                                        growth periods and a different approach for fertilizing the soil. The name wild rice is usually used for species of the genera Zizania and Porteresia, both 
+                                        wild and domesticated, although the term may also be used for primitive or uncultivated varieties of Oryza.
+                                    </h3>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div><br><br><br><br>
+            </div>
+            <!-- / content -->
+        </div>
+
+        <div class="main">
+            <!-- footer -->
+            <footer>
+                <div class="wrapper">
+                    <section class="col2">
+                        <div class="wrapper">
+                            <section class="col4">
+                                <h3>Follow Us </h3>
+                                <ul id="icons">
+                                    <li><a target="_blank" href="https://www.facebook.com/MacmaK491"><img src="images/icon1.jpg" alt=""><span>Facebook</span></a></li>
+                                    <li><a target="_blank" href="https://twitter.com/mayur491"><img src="images/icon2.jpg" alt=""><span>Twitter</span></a></li>
+                                    <li><a target="_blank" href="https://www.linkedin.com/in/mayur491/"><img src="images/icon3.jpg" alt=""><span>Linked In</span></a></li>
+                                </ul>
+                            </section>
+                            <section class="col4">
+                                <h3>Why Us </h3>
+                                <ul id="why_us">
+                                    <li><a href="#">We provide <b><i>Free services! </i></b></a></li>
+                                    <li><a href="#">We provide <b><i>Fast services! </i></b></a></li>
+                                    <li><a href="#">We provide <b><i>Best services! </i></b></a></li>
+                                </ul>
+                            </section>
+                        </div>
+                        <div id="footer_link">Copyright &copy; <a target="_blank" href="https://www.instagram.com/mayur491/">MacmaK</a> All Rights Reserved<br>
+                            Design by <a target="_blank" href="https://www.instagram.com/mayur491/">MacmaK</a></div>
+                    </section>
+                    <section class="col3 pad_left2">
+                        <form id="ContactForm" action="MAILTO:mayur491@gmail.com" method="post" enctype="text/plain">
+                            <h3 align="right">Email Us:<br></h3>
+                            <button action="MAILTO:mayur491@gmail.com">Click</button>
+                        </form>
+                    </section>
+                </div>
+            </footer>
+            <!-- / footer -->
+        </div>
+
+        <script>
+            function openNav() {
+                document.getElementById("myNav").style.width = "100%";
+            }
+
+            function closeNav() {
+                document.getElementById("myNav").style.width = "0%";
+            }
+        </script>
+
+    </body>
+</html>

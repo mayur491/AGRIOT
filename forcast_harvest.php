@@ -40,13 +40,12 @@
                             <li><a href="index.php">Home</a></li>
                             <li class="active"><a href="DataEntry.html">Crop Water</a></li>
                             <li><a href="fertilizers.html">Fertilizers</a></li>
-                            <li><a href="irrigation.php">Irrigation</a></li>
+                            <li><a href="irrigation.html">Irrigation</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
             </header>
-            <center><h3>5'th Phase ! (Harvest)</h3></center>
             <div class="container">
                 <?php
 
@@ -118,7 +117,7 @@
                                         </h5>
                                     </div>
                                     <div class="input-group">                                        
-                                        <h5><input type='text' name='tdew' value = "<?php echo 15 ?>">
+                                        <h5><input type='text' name='tdew' value = "<?php ?>">
                                             <span>Tdew (&deg;C)</span>
                                         </h5>
                                     </div>
@@ -142,15 +141,16 @@
                                     <b>Crop :</b>
                                     <div class="input-group">
                                         <select name="crop">
-                                            <option value="Rice">Rice</option>
+                                            <option value="Banana">Rice</option>
                                             <option value="Wheat">Wheat</option>
+                                            <option value="Sorghum">Sorghum</option>
                                             <option value="Groundnut">Groundnut</option>
                                             <option value="Cotton">Cotton</option>
                                         </select>
                                     </div>
                                     <div class="input-group">
                                         <b>Enter area for cultivation (m x m)</b>
-                                        <input required type='text' placeholder="Field Area" name="area"/>
+                                        <input type='text' placeholder="Field Area" name="area"/>
                                     </div>
                                     <div class="input-group">
                                         <input value="Submit" name="submit" type="submit">

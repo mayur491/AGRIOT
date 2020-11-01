@@ -1,21 +1,21 @@
-<!--Not using this File-->
 <?php include_once('functions.php'); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Calender</title>
-        <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
-        <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
-        <link rel="stylesheet" href="css1/style.css">
-        <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+
+        <link rel="stylesheet" href="css/reset.css" type="text/css" media="all"></link>
+        <link rel="stylesheet" href="css/layout.css" type="text/css" media="all"></link>
+        <link rel="stylesheet" href="css1/style.css"></link>
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="all"></link>
         <script type="text/javascript" src="js/jquery-1.6.js"></script>
         <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
         <script type="text/javascript" src="js/tms-0.3.js"></script>
         <script type="text/javascript" src="js/tms_presets.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-        <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"></link>
+        <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'></link>
         <link rel="icon" type="image/png" href="table/images/icons/itachi.ico"/>
 
         <link type="text/css" rel="stylesheet" href="style.css"/>
@@ -32,20 +32,24 @@
                             <ul id="menu">
                                 <li><a href="index.php">Home</a></li>
                                 <li><a href="DataEntry.html">Crop Water</a></li>
-                                <li class="active"><a href="fertilizers.html">Fertilizers</a></li>
-                                <li><a href="irrigation.php">Irrigation</a></li>
+                                <li><a href="fertilizers.html">Fertilizers</a></li>
+                                <li class="active"><a href="irrigation.html">Irrigation</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </nav>
                     </div>
-                </header>  
+                </header>
+                <article id="content">
+                    <div class="wrapper">
+                        <center><h2>CALENDER</h2></center>
+
+                        <div id="calendar_div">
+                            <?php echo getCalender(); ?>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
-
-        <div id="calendar_div">
-            <?php echo getCalender(); ?>
-        </div>
-
         <div class="main">
             <!-- footer -->
             <footer>

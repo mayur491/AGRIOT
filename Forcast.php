@@ -13,7 +13,7 @@
     <script type="text/javascript" src="js/script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-
+    
     <link rel="icon" type="image/png" href="table/images/icons/itachi.ico"/>
     <script type="text/javascript">
         //<![CDATA[
@@ -27,24 +27,6 @@
             }
         }
         //]]>
-        
-        function validateForm()
-    {
-        var a=document.forms["Form"]["tmax"].value;
-        var b=document.forms["Form"]["tmin"].value;
-        var c=document.forms["Form"]["tmean"].value;
-        var d=document.forms["Form"]["tdew"].value;
-        var e=document.forms["Form"]["uz"].value;
-        var f=document.forms["Form"]["month"].value;
-        var g=document.forms["Form"]["n"].value;
-        var h=document.forms["Form"]["area"].value;
-        if (a==null || a=="",b==null || b=="",c==null || c=="",d==null || d=="",e==null || e=="",f==null || f=="",g==null || g=="",h==null || h=="")
-        {
-            alert("Please Fill All Fields");
-            return false;
-        }
-    }
-        
     </script>
 </head>
 <body onload="document.forms[0][0].focus()" id="page3">
@@ -58,16 +40,15 @@
                             <li><a href="index.php">Home</a></li>
                             <li class="active"><a href="DataEntry.html">Crop Water</a></li>
                             <li><a href="fertilizers.html">Fertilizers</a></li>
-                            <li><a href="irrigation.php">Irrigation</a></li>
+                            <li><a href="irrigation.html">Irrigation</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
             </header>
-            <center><h3>1'st Phase ! (Initial)</h3></center>
             <div class="container">
                 <?php
-
+                
                 function Signin() {
                     $key = "4153d0a630f54aa6b6f72834171510";
                     $forcast_days = '1';
@@ -117,58 +98,59 @@
                           } */
                         . "</table> <br>";
                         ?>
-                        <form name = "Form" method = "POST" onsubmit="return validateForm()" action = "etocal.php">
+                        <form method="POST" action="etocal.php">
                             <div id="container">
                                 <div class="row">
                                     <div class="input-group">                                        
-                                        <h5><input type='text' name='tmax' id="a" value = "<?php echo $day->day->maxtemp_c ?>">
+                                        <h5><input type='text' name='tmax' value = "<?php echo $day->day->maxtemp_c ?>">
                                             <span>Max. Temperature (&deg;C)</span>
                                         </h5>
                                     </div>
                                     <div class="input-group">                                        
-                                        <h5><input type='text' id="b" name='tmin' value = "<?php echo $day->day->mintemp_c ?>">
+                                        <h5><input type='text' name='tmin' value = "<?php echo $day->day->mintemp_c ?>">
                                             <span>Min. Temperature (&deg;C)</span>
                                         </h5>
                                     </div>
                                     <div class="input-group">                                        
-                                        <h5><input type='text' id="c" name='tmean' value = "<?php echo $day->day->avgtemp_c ?>">
+                                        <h5><input type='text' name='tmean' value = "<?php echo $day->day->avgtemp_c ?>">
                                             <span>Avg. Temperature (&deg;C)</span>
                                         </h5>
                                     </div>
                                     <div class="input-group">                                        
-                                        <h5><input type='text' id="d" name='tdew' value = "<?php echo 15 ?>">
+                                        <h5><input type='text' name='tdew' value = "<?php ?>">
                                             <span>Dew point Temperature (&deg;C)</span>
                                         </h5>
                                     </div>
                                     <div class="input-group">                                        
-                                        <h5><input type='text' id="e" name='uz' value = "<?php echo $day->day->maxwind_kph ?>">
+                                        <h5><input type='text' name='uz' value = "<?php echo $day->day->maxwind_kph ?>">
                                             <span>Wind speed at 10m (kmph)</span>
                                         </h5>
                                     </div>
                                     <div class="input-group">
                                         <?php $mon = date('F') ?>
-                                        <h5><input type='text' id="f" name='month' value = "<?php echo $mon ?>">
+                                        <h5><input type='text' name='month' value = "<?php echo $mon ?>">
                                             <span>Current Month</span>
                                         </h5>
                                     </div>
                                     <div class="input-group">  
                                         <?php $hr = date('H') + 5 ?>
-                                        <h5><input type='text' id="g" name='n' value = "<?php echo $hr ?>">
+                                        <h5><input type='text' name='n' value = "<?php echo $hr ?>">
                                             <span>Current Hour (24 hr. format)</span>
                                         </h5>
                                     </div>
                                     <b>Crop :</b>
                                     <div class="input-group">
                                         <select name="crop">
-                                            <option value="Wheat">Wheat</option>
                                             <option value="Rice">Rice</option>
+                                            <option value="Wheat">Wheat</option>
+                                            <option value="Sorghum">Sorghum</option>
                                             <option value="Groundnut">Groundnut</option>
                                             <option value="Cotton">Cotton</option>
                                         </select>
                                     </div>
                                     <div class="input-group">
                                         <b>Enter area for cultivation (m x m)</b>
-                                        <input required type='text' id="h" placeholder="Field Area" name="area"/>
+                                        <input type='text' placeholder="Field Area" name="area"/>
                                     </div>
                                     <div class="input-group">
                                         <input value="Submit" name="submit" type="submit">
@@ -192,40 +174,40 @@
         </div><br>
     </div>
     <div class="main">
-        <!-- footer -->
-        <footer>
-            <div class="wrapper">
-                <section class="col2">
-                    <div class="wrapper">
-                        <section class="col4">
-                            <h3>Follow Us </h3>
-                            <ul id="icons">
-                                <li><a target="_blank" href="https://www.facebook.com/MacmaK491"><img src="images/icon1.jpg" alt=""><span>Facebook</span></a></li>
-                                <li><a target="_blank" href="https://twitter.com/mayur491"><img src="images/icon2.jpg" alt=""><span>Twitter</span></a></li>
-                                <li><a target="_blank" href="https://www.linkedin.com/in/mayur491/"><img src="images/icon3.jpg" alt=""><span>Linked In</span></a></li>
-                            </ul>
-                        </section>
-                        <section class="col4">
-                            <h3>Why Us </h3>
-                            <ul id="why_us">
-                                <li><a href="#">We provide <b><i>Free services! </i></b></a></li>
-                                <li><a href="#">We provide <b><i>Fast services! </i></b></a></li>
-                                <li><a href="#">We provide <b><i>Best services! </i></b></a></li>
-                            </ul>
-                        </section>
-                    </div>
-                    <div id="footer_link">Copyright &copy; <a target="_blank" href="https://www.instagram.com/mayur491/">MacmaK</a> All Rights Reserved<br>
-                        Design by <a href="macmak.html">MacmaK</a></div>
-                </section>
-                <section class="col3 pad_left2">
-                    <form id="ContactForm" action="MAILTO:mayur491@gmail.com" method="post" enctype="text/plain">
-                        <h3 align="right">Email Us:<br></h3>
-                        <button action="MAILTO:mayur491@gmail.com">Click</button>
-                    </form>
-                </section>
-            </div>
-        </footer>
-        <!-- / footer -->
-    </div>
+            <!-- footer -->
+            <footer>
+                <div class="wrapper">
+                    <section class="col2">
+                        <div class="wrapper">
+                            <section class="col4">
+                                <h3>Follow Us </h3>
+                                <ul id="icons">
+                                    <li><a target="_blank" href="https://www.facebook.com/MacmaK491"><img src="images/icon1.jpg" alt=""><span>Facebook</span></a></li>
+                                    <li><a target="_blank" href="https://twitter.com/mayur491"><img src="images/icon2.jpg" alt=""><span>Twitter</span></a></li>
+                                    <li><a target="_blank" href="https://www.linkedin.com/in/mayur491/"><img src="images/icon3.jpg" alt=""><span>Linked In</span></a></li>
+                                </ul>
+                            </section>
+                            <section class="col4">
+                                <h3>Why Us </h3>
+                                <ul id="why_us">
+                                    <li><a href="#">We provide <b><i>Free services! </i></b></a></li>
+                                    <li><a href="#">We provide <b><i>Fast services! </i></b></a></li>
+                                    <li><a href="#">We provide <b><i>Best services! </i></b></a></li>
+                                </ul>
+                            </section>
+                        </div>
+                        <div id="footer_link">Copyright &copy; <a target="_blank" href="https://www.instagram.com/mayur491/">MacmaK</a> All Rights Reserved<br>
+                            Design by <a href="macmak.html">MacmaK</a></div>
+                    </section>
+                    <section class="col3 pad_left2">
+                        <form id="ContactForm" action="MAILTO:mayur491@gmail.com" method="post" enctype="text/plain">
+                            <h3 align="right">Email Us:<br></h3>
+                            <button action="MAILTO:mayur491@gmail.com">Click</button>
+                        </form>
+                    </section>
+                </div>
+            </footer>
+            <!-- / footer -->
+        </div>
 </body>
 </html>

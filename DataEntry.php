@@ -1,4 +1,3 @@
-<!--Not Using this file-->
 <html>
     <body bgcolor="6688cc">
         <?php
@@ -33,7 +32,7 @@
                     <?php
                 }
 
-                //header("refresh:1; url=DataEntry.html");
+                header("refresh:1; url=DataEntry.html");
                 ?>
 </body>
 </html>

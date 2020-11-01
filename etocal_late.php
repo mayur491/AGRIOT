@@ -27,7 +27,7 @@
                             <li><a href="index.php">Home</a></li>
                             <li class="active"><a href="DataEntry.html">Crop Water</a></li>
                             <li><a href="fertilizers.html">Fertilizers</a></li>
-                            <li><a href="irrigation.php">Irrigation</a></li>
+                            <li><a href="Irrigation.html">Irrigation</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </nav>

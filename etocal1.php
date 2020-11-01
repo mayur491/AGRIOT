@@ -27,7 +27,7 @@
                             <li><a href="index.php">Home</a></li>
                             <li class="active"><a href="DataEntry.html">Crop Water</a></li>
                             <li><a href="fertilizers.html">Fertilizers</a></li>
-                            <li><a href="irrigation.php">Irrigation</a></li>
+                            <li><a href="Irrigation.html">Irrigation</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </nav>
@@ -41,7 +41,7 @@
                 define('DB_PASSWORD', 'prash123');*/
                 
                 define('DB_HOST', 'localhost');
-                define('DB_NAME', 'id3206387_cropwater');
+                define('DB_NAME', 'agridb');
                 define('DB_USER', 'root');
                 define('DB_PASSWORD', '');
                 $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD) or die("Failed to connect to MySQL: " . mysqli_connect_error());

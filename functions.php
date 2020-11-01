@@ -30,64 +30,14 @@ function getCalender($year = '', $month = '') {
     ?>
     <div id="calender_section">
 
-        <div class="container">
-            <h4>Month & Year</h4>
-            <div class="input-group">
-                <select name="month_dropdown" class="month_dropdown dropdown"><?php echo getAllMonths($dateMonth); ?></select>
-            </div>
-            <div class="input-group">
-                <select name="year_dropdown" class="year_dropdown dropdown"><?php echo getYearList($dateYear); ?></select>
-            </div>
-        </div>
-        <center>
-            <h3><pre><a href="javascript:void(0);" onclick="getCalendar('calendar_div', '<?php echo date("Y", strtotime($date . ' - 1 Month')); ?>', '<?php echo date("m", strtotime($date . ' - 1 Month')); ?>');">&lt;&lt;</a>     <a align="center" onclick="add()">Add Event</a>     <a href="javascript:void(0);" onclick="getCalendar('calendar_div', '<?php echo date("Y", strtotime($date . ' + 1 Month')); ?>', '<?php echo date("m", strtotime($date . ' + 1 Month')); ?>');">&gt;&gt;</a></pre></h3>
-        </center>
+            <!--<a href="javascript:void(0);" onclick="getCalendar('calendar_div', '<?php echo date("Y", strtotime($date . ' - 1 Month')); ?>', '<?php echo date("m", strtotime($date . ' - 1 Month')); ?>');">&lt;&lt;</a>-->
+        <select name="month_dropdown" class="month_dropdown dropdown"><?php echo getAllMonths($dateMonth); ?></select>
+        <select name="year_dropdown" class="year_dropdown dropdown"><?php echo getYearList($dateYear); ?></select>
+        <!--<a href="javascript:void(0);" onclick="getCalendar('calendar_div', '<?php echo date("Y", strtotime($date . ' + 1 Month')); ?>', '<?php echo date("m", strtotime($date . ' + 1 Month')); ?>');">&gt;&gt;</a>-->
 
-        <div id="demo" class="container" style="display: none">
-            <form action="addEvent.php" method="post">
-                <div class="input-group">
-                    <h4>Which Crop? : </h4>
-                    <select name="cropName">
-                        <option value="Wheat">Wheat</option>
-                        <option value="Cotton">Cotton</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <h4>Which Irrigation? : </h4>
-                    <select name="choice">
-                        <option value="First">First Irrigation</option>
-                        <option value="Second">Second Irrigation</option>
-                        <option value="Third">Third Irrigation</option>
-                        <option value="Fourth">Fourth Irrigation</option>
-                        <option value="Fifth">Fifth Irrigation</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <h4>Date of Sowing/ Previous Irrigation: </h4><input required type="date" name="dateOfSowing" placeholder="Date of sowing"/>
-                </div>
-                <div class="input-group">
-                    <h4>Soil moisture (%): </h4><input required type="text" name="soilMoisture" placeholder="Soil Moisture"/>
-                </div>
-                <div class="input-group">
-                    <h4>Dry density of soil (g/cc) (if value is greater than 1.6 it will restrict the growth of roots): </h4><input required type="text" name="dryDensity" placeholder="Dry density of soil"/>
-                </div>
-                <div class="input-group">
-                    <h4>Crop water (liters): </h4><input required type="text" name="cropWater" placeholder="Crop water"/>
-                </div>
-                <div class="input-group">
-                    <h4>Area of cultivation (meter square): </h4><input required type="text" name="areaOfCultivation" placeholder="Area of cultivation"/>
-                </div>
-                <div class="input-group">
-                    <h4>Rooting Depth (m): </h4><input required type="text" name="rootingDepth" placeholder="Rooting Depth"/>
-                </div>
-                <div class="input-group">
-                    <input value="Submit" name="submit" type="submit">
-                </div>
-            </form>
-        </div>
 
-        <pre>
-        </pre>
+        <p id="demo"></p>
+
         <div id="event_list" class="none"></div>
         <div id="calender_section_top">
             <ul>
@@ -128,13 +78,14 @@ function getCalender($year = '', $month = '') {
                         echo '</span>';
 
                         //Hover event popup
-                        if ($eventNum > 0) {
-                            echo '<div id="date_popup_' . $currentDate . '" class="date_popup_wrap none">';
-                            echo '<div class="date_window">';
-                            echo '<div class="popup_event">Events (' . $eventNum . ')</div>';
-                            echo ($eventNum > 0) ? '<a href="javascript:;" onclick="getEvents(\'' . $currentDate . '\');"><h4>view events</h4></a>' : '';
-                            echo '</div></div>';
-                        }
+
+                        echo '<div id="date_popup_' . $currentDate . '" class="date_popup_wrap none">';
+                        echo '<div class="date_window">';
+                        echo '<div class="popup_event">Events (' . $eventNum . ')</div>';
+                        echo ($eventNum > 0) ? '<a href="javascript:;" onclick="getEvents(\'' . $currentDate . '\');"><h4>View</h4></a>' : '';
+                        echo ($eventNum > 0) ? '<a href="javascript:;" onclick="addEvent(\'' . $currentDate . '\');"><h4>Add</h4></a>' : '';
+                        echo '</div></div>';
+
                         echo '</li>';
                         $dayCount++;
                         ?>
@@ -203,15 +154,6 @@ function getCalender($year = '', $month = '') {
                 $('#event_list').slideUp('slow');
             });
         });
-
-        function add() {
-            var x = document.getElementById("demo");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-        }
     </script>
     <?php
 }
@@ -248,26 +190,31 @@ function getYearList($selected = '') {
  */
 
 function getEvents($date = '') {
-    ?>
-    <div class="container">
-        <?php
-        //Include db configuration file
-        include 'dbConfig.php';
-        $eventListHTML = '';
-        $date = $date ? $date : date("Y-m-d");
-        //Get events based on the current date
-        $result = $db->query("SELECT title FROM events WHERE date = '" . $date . "' AND status = 1");
-        if ($result->num_rows > 0) {
-            $eventListHTML = '<h4>Events on ' . date("l, d M Y", strtotime($date)) . '</h2>';
-            $eventListHTML .= '<ul>';
-            while ($row = $result->fetch_assoc()) {
-                $eventListHTML .= '<li> ' . $row['title'] . '</li>';
-            }
-            $eventListHTML .= '</ul>';
+    //Include db configuration file
+    include 'dbConfig.php';
+    $eventListHTML = '';
+    $date = $date ? $date : date("Y-m-d");
+    //Get events based on the current date
+    $result = $db->query("SELECT title FROM events WHERE date = '" . $date . "' AND status = 1");
+
+    '<div><br>';
+    if ($result->num_rows > 0) {
+        $eventListHTML = '<br><h4>Events on ' . date("l, d M Y", strtotime($date)) . '</h3>';
+        $eventListHTML .= '<ul>';
+        while ($row = $result->fetch_assoc()) {
+            $eventListHTML .= '<li><h5> >> ' . $row['title'] . '</h5></li>';
         }
-        echo $eventListHTML;
-        ?>
-    </div>
-    <?php
+        $eventListHTML .= '</ul>';
+    }
+    echo $eventListHTML;
+    '<div>';
+}
+
+function addEvent($date = '') {
+    
+    echo 'Enter event title: '
+    . '<input type="text" name="title" placeholder="event name">'
+    . '<button type="submit">';
+    
 }
 ?>

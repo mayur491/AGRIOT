@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title>Agrox | Fertilizers</title>
+
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="table/images/icons/itachi.ico"/>
     <link rel="stylesheet" type="text/css" href="table/vendor/bootstrap/css/bootstrap.min.css">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="table/vendor/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" type="text/css" href="table/css/util.css">
     <link rel="stylesheet" type="text/css" href="table/css/main.css">
+
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
     <link rel="stylesheet" href="css1/style.css">
@@ -21,6 +23,7 @@
     <script type="text/javascript" src="js/script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
 </head>
 <body id="page3">
     <div class="body1">
@@ -33,20 +36,23 @@
                             <li><a href="index.php">Home</a></li>
                             <li><a href="DataEntry.html">Crop Water</a></li>
                             <li class="active"><a href="fertilizers.html">Fertilizers</a></li>
-                            <li><a href="irrigation.php">Irrigation</a></li>
+                            <li><a href="Irrigation.html">Irrigation</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
             </header>
         </div>
+
         <?php
         define('DB_HOST', 'localhost');
         define('DB_NAME', 'id3206387_cropwater');
         define('DB_USER', 'root');
         define('DB_PASSWORD', '');
+
         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD) or die("Failed to connect to MySQL: " . mysqli_connect_error());
         $db = mysqli_select_db($conn, DB_NAME) or die("Failed to connect to MySQL: " . mysqli_connect_error());
+
         if (isset($_POST['submit'])) {
             $crop = $_POST['crop'];
             $nitrogen = $_POST['nitrogen'];
@@ -57,11 +63,13 @@
             $previouscrop = $_POST['crop_previously_cultivated'];
             $crop_rotation = $_POST['crop_rotation'];
             ?>
+
             <div class="table100 ver3 m-b-110">
                 <div class="table100-head">
                     <table>
                         <thead>
                             <tr class="row100 head">
+
                                 <?php
                                 if ($crop == 'wheat') {
                                     switch ($nitrogen) {
@@ -247,6 +255,7 @@
                                     break;
                             }
                         }
+
                         if ($crop == 'sorghum') {
                             switch ($nitrogen) {
                                 case $nitrogen < 5 : $n = 1;
@@ -339,6 +348,7 @@
                                     break;
                             }
                         }
+
                         if ($crop == 'groundnut') {
                             switch ($nitrogen) {
                                 case $nitrogen < 2 : $n = 1;
@@ -432,6 +442,7 @@
                             }
                         }
                         ?>
+
                         </tr>
                         </thead>
                     </table>    
@@ -439,9 +450,11 @@
             </div>
             <?php
             $range = $n * 100 + $p * 10 + $k;
+
             if ($crop == 'wheat') {
                 $query = mysqli_query($conn, "SELECT * FROM npk_wheat where npk = '$range'");
             }
+
             if ($crop == 'cotton') {
                 $query = mysqli_query($conn, "SELECT * FROM npk_cotton where npk = '$range'");
             }
@@ -453,12 +466,9 @@
             }
             ?>
             <br>
-            
+            <div class='container'>
                 <?php
                 if ($crop == 'wheat') {
-                    ?>
-                    <div class='container'>
-                    <?php
                     echo "<h5><br><font color=#00ad5f>Well rotten farmyard manure (FYM) or compost should be applied at the rate of 15 to 20 tons after every two years. "
                     . "<br>If farmyard manure has been applied, reduce the fertilizer quantity by 2 kg of nitrogen and 1 kg of phosphorus per 10 quintal of farmyard manure applied.<br>";
 
@@ -512,6 +522,7 @@
                             echo "<br>--The symptoms appear on the middle leaves as interveinal chlorosis with light grayish yellow to pinkish brown or buff coloured specks of variable size confined largely to 2/3 lower portion of the leaf. "
                             . "<br>Later, the specks coalesce forming a streak or band in between the veins which remain green. "
                             . "<br>In acute deficiency whole of the plant may become dry.";
+
                             echo "<br>--In manganese deficient soils, "
                             . "<br>give one spray of 0.5% manganese sulphate solution (1 kg manganese sulphate in 200 litres of water) "
                             . "<br>2-4 days before first irrigation and two to three sprays afterwards at weekly intervals on sunny days.";
@@ -520,6 +531,7 @@
                         case "light" :
                             echo "<br>Since the soil type is LIGHT: Zinc deficiency generally appears in light soils under intensive cropping.";
                             echo "<br>Application of 25 kg of zinc sulphate per acre which will be enough for 2-3 years.";
+
                             echo "<br>--Zinc deficiency can also be corrected by foliar spray of 0.5% zinc sulphate (21% Zinc). "
                             . "<br>Prepare the solution for spray by dissolving 1 kg zinc sulphate and 1/2 kg unslaked lime in 200 litres of water. "
                             . "<br>This solution is sufficient for spraying an acre of wheat once. "
@@ -529,10 +541,12 @@
                 }
                 ?>
             </div>
+
             <div class="container-table100">
                 <div class="limiter">
                     <div class="wrap-table100">
                         <div class="table100 ver1 m-b-110">
+
                             <div class="table100 ver3 m-b-110">
                                 <div class="table100-head">
                                     <table>
@@ -545,16 +559,21 @@
                                         </thead>
                                     </table>
                                 </div>
+
                                 <div class="table100-body js-pscroll">
                                     <table>
                                         <tbody>
+
                                             <?php
                                             while ($row = mysqli_fetch_array($query)) {
                                                 $query1 = mysqli_query($conn, "SELECT * FROM fertilizer_list where id = '$row[abc]'");
+
                                                 while ($row1 = mysqli_fetch_array($query1)) {
                                                     echo "<tr class='row100 body'>";
                                                     echo "<td class='cell100 column1'>" . $row1['fertname'] . "</td>";
+
                                                     echo "<td class='cell100 column2'>" . $row1['composition'] . "</td>";
+
                                                     echo "<td class='cell100 column3'>" . $row['quantity'] . "</td>";
                                                     echo "</tr>";
                                                 }
@@ -563,7 +582,9 @@
                                                 if ($nitrogen >= 20 && $nitrogen <= 30) {
                                                     echo "<tr class='row100 body'>";
                                                     echo "<td class='cell100 column1'> Urea </td>";
+
                                                     echo "<td class='cell100 column2'> 46-0-0 </td>";
+
                                                     echo "<td class='cell100 column3'> 0.5 </td>";
                                                     echo "</tr>";
                                                 }
@@ -577,24 +598,74 @@
                     </div>
                 </div>
             </div>
+
+            <div class="container-table100">
+                <div class="limiter">
+                    <div class="wrap-table100">
+                        <div class="table100 ver1 m-b-110">
+
+                            <div class="table100 ver3 m-b-110">
+                                <div class="table100-head">
+                                    <table>
+                                        <thead>
+                                            <tr class="row100 head">
+                                                <th class="cell100 column1">Recon</th>
+                                                <th class="cell100 column2">Dose</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="table100-body js-pscroll">
+                                    <table>
+                                        <tbody>
+                                            <tr class='row100 body'>
+                                                <td class='cell100 column1'>N</td>
+                                                <td class='cell100 column2'><?php echo $nitrogen ?></td>
+                                            </tr>
+                                            <tr class='row100 body'>
+                                                <td class='cell100 column1'>P</td>
+                                                <td class='cell100 column2'><?php echo $phosphorous ?></td>
+                                            </tr>
+                                            <tr class='row100 body'>
+                                                <td class='cell100 column1'>K</td>
+                                                <td class='cell100 column2'><?php echo $potassium ?></td>
+                                            </tr>
+                                            <tr class='row100 body'>
+                                                <td class='cell100 column1'>Total</td>
+                                                <td class='cell100 column2'><?php echo $nitrogen + $phosphorous + $potassium ?></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
         <script src="table/vendor/jquery/jquery-3.2.1.min.js"></script>
         <script src="table/vendor/bootstrap/js/popper.js"></script>
         <script src="table/vendor/bootstrap/js/bootstrap.min.js"></script>
         <script src="table/vendor/select2/select2.min.js"></script>
         <script src="table/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
         <script>
-                                        $('.js-pscroll').each(function () {
-                                            var ps = new PerfectScrollbar(this);
-                                            $(window).on('resize', function () {
-                                                ps.update();
-                                            });
+                                    $('.js-pscroll').each(function () {
+                                        var ps = new PerfectScrollbar(this);
+
+                                        $(window).on('resize', function () {
+                                            ps.update();
                                         });
+                                    });
         </script>
         <script src="table/js/main.js"></script>
         <?php
     }
     ?>
+
+
+
     <div class="main">
         <!-- footer -->
         <footer>

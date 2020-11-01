@@ -1,5 +1,6 @@
 body{ font-family: sans-serif;}
 .none{ display:none;}
+.dropdown{color: #444444;font-size:17px;}
 #calender_section{ width:700px; margin:30px auto 0;}
 #calender_section h2{ background-color:#efefef; color:#444444; font-size:17px; text-align:center; line-height:40px;}
 #calender_section h2 a{ color:#F58220; float:none;}
@@ -55,7 +56,9 @@ body{ font-family: sans-serif;}
 	font-size: 16px;
 	width:100%;
 }
-a:hover {color: #abcdef;text-decoration: underline;}
+.popup_event a {color: #000000 !important;}
+.packeg_box a {color: #F58220;float: right;}
+a:hover {color: #181919;text-decoration: underline;}
 
 @media only screen and (min-width:480px) and (max-width:767px) {
 #calender_section{ width:336px;}

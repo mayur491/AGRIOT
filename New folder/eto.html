@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>mean total</title>
+
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+
+<style type="text/css">
+/*<![CDATA[*/
+#container {
+     width:700px;
+     border:3px double #000;
+     background:#ccc;
+     margin:20px auto;
+}
+#container input {
+     width:98px;
+}
+#container div {
+     margin:50px 70px;
+ }
+/*//]]>*/
+</style>
+
+<script type="text/javascript">
+//<![CDATA[
+function doSums(what) {
+  var df=document.forms[0];
+  var a=parseFloat(df[0].value);
+  var b=parseFloat(df[1].value);
+  
+if((isNaN(a))||(isNaN(b))) {
+alert("Enter temperature values please !");
+     df.reset();
+     df[0].focus();
+     return;
+ }
+if(what=="mean") {
+    df[3].value=(a+b)/2;
+  }
+
+ }
+//]]>
+</script>
+
+</head>
+<body onload="document.forms[0][0].focus()">
+
+<form method="POST" action="etocal.php">
+<div id="container">
+    
+<div><input type="text"/> Tmax</div>
+<div><input type="text"/> Tmin</div>
+<div>
+
+<input type="button" value="average" onclick="doSums('mean')"/>
+<input type="text" name="tmean"/>
+</div>
+<div>
+<input type="text" name="tdew"/> Tdew (Degree Celsius)
+</div>
+<div>
+    <input type="text" name="uz"/> Enter wind speed at 10m (m/s)
+</div>
+<div><input type="text" name="month"/>Enter month</div>
+<div><input type="text" name="n"/>Enter the hour</div>
+<center><div>Enter the crop : <input type="text" name="crop" placeholder="Enter crop name"/></div><div>Enter area for cultivation (m x m): <input type='text' name="area"/></div></center>
+<div><input id="submit" type="submit" name="submit" value="Submit">
+<input type="reset" value="reset" onclick="document.forms[0][0].focus()"/></div>
+</div>
+</form>
+
+</body>
+</html>

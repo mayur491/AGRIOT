@@ -27,7 +27,7 @@
                             <li><a href="index.php">Home</a></li>
                             <li class="active"><a href="DataEntry.html">Crop Water</a></li>
                             <li><a href="fertilizers.html">Fertilizers</a></li>
-                            <li><a href="irrigation.php">Irrigation</a></li>
+                            <li><a href="Irrigation.html">Irrigation</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </nav>
@@ -35,6 +35,11 @@
             </header>
             <div class="container">
                 <?php
+                /* define('DB_HOST', 'localhost');
+                  define('DB_NAME', 'id3206387_cropwater');
+                  define('DB_USER','id3206387_prash');
+                  define('DB_PASSWORD','prash123'); */
+
                 define('DB_HOST', 'localhost');
                 define('DB_NAME', 'id3206387_cropwater');
                 define('DB_USER', 'root');
@@ -84,6 +89,20 @@
                     $fu = 0.27 * $fu;
                     $one = $row1['ed'];
                     ?>
+
+                    <!--<div>
+                    <input type = "checkbox" class = "read-more-state" id = "post-1" />
+
+                    <p class = "read-more-wrap">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        <span class = "read-more-target">
+                            Libero fuga facilis vel consectetur quos sapiente deleniti eveniet dolores tempore eos deserunt officia quis ab? Excepturi vero tempore minus beatae voluptatem!
+                        </span>
+                    </p>
+
+                    <label for = "post-1" class = "read-more-trigger"></label>
+                    </div>-->
+
                     <div><center>
                             <input type = "checkbox" class = "read-more-state" id = "post-2" />
                             <ul class = "read-more-wrap">

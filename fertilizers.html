@@ -14,11 +14,25 @@
         <script type="text/javascript" src="js/script.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
         <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
         <link rel="icon" type="image/png" href="table/images/icons/itachi.ico"/>
+        <script>
+            /*function validateM(nitrogen){
+             
+             if	(nitrogen.value.length!=10)
+             {
+             alert("Enter valid value!");
+             random1.value="";
+             //email.focus();
+             return false;
+             }
+             }*/
+        </script>
     </head>
     <body id="page3">
         <div class="body1">
             <div class="main">
+
                 <header>
                     <div class="wrapper">
                         <h1><a href="index.php" id="logo">Agrox Agriculture Company</a></h1>
@@ -27,18 +41,19 @@
                                 <li><a href="index.php">Home</a></li>
                                 <li><a href="DataEntry.html">Crop Water</a></li>
                                 <li class="active"><a href="fertilizers.html">Fertilizers</a></li>
-                                <li><a href="irrigation.php">Irrigation</a></li>
+                                <li><a href="irrigation.html">Irrigation</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </nav>
                     </div>
                 </header>
+
                 <article id="content">
                     <div class="wrapper">
                         <h2>Choosing the right fertilizers &amp; pesticides</h2>
                         <div class="wrapper pad_top1">
                             <div class="marg_right1">
-                                <figure class="left marg_right1"><img src="images/fertilizerPage/img1.jpg" alt=""></figure>
+                                <figure class="left marg_right1"><img src="images/page3_img1.jpg" alt=""></figure>
                                 <p class="color1 pad_bot1 pad_top1">Essential plant nutrients | Types of fertilizers | Soil nutrient content and soil testing | Fertilizer recommendations |</p>
                                 <p>Proper nutrition is essential for satisfactory crop growth and production. The use of soil tests can help to determine the status of plant available nutrients to develop fertilizer recommendations to achieve optimum crop production. The profit potential for farmers depends on producing enough crop per acre to keep production costs below the selling price. Efficient application of the correct types and amounts of fertilizers for the supply of the nutrients is an important part of achieving profitable yields.</p>
                             </div>
@@ -53,23 +68,28 @@
                                     <a href="typeoffertilizers.html"> Know more</a> </p>
                             </section>
                         </div>
+
                     </div>
                 </article>
             </div>
+
+
             <div class="body2"><br>
                 <div class="container">
                     <b>Soil Test</b>
-                    <form name="SoilTest" onsubmit="return validateForm()" action="fertilizers.php" method="post">
+                    <form name="SoilTest" action="fertilizers.php" method="post">
                         <div class="row">
                             <h4>Crop</h4>
                             <div class="input-group">  
                                 <select name="crop">
+                                    <option value="rice">Rice</option>
                                     <option value="wheat">Wheat</option>
                                     <option value="sorghum">Sorghum</option>
                                     <option value="groundnut">Groundnut</option>
                                     <option value="cotton">Cotton</option>
                                 </select>
                             </div>
+
                             <h4>Is your soil type?</h4>
                             <div class="input-group">  
                                 <select name="soiltype">
@@ -78,40 +98,46 @@
                                     <option value="sandy">Sandy</option>
                                     <option value="light">Light</option>
                                     <option value="none">None of the above</option>
+
                                 </select>
                             </div>
                             <h4> Soil NPK values: </h4>
                             <div class="input-group">
-                                <h5><input type="text" id="a" name="nitrogen" placeholder="Nitrogen" required>
+
+                                <h5><input type="text" name="nitrogen" placeholder="Nitrogen">
                                     <span>Amount of N kg/acre</span>
                                 </h5>
                             </div>
                             <div class="input-group">
-                                <h5><input type="text" id="b" name="phosphorous" placeholder="Phosphorous" required>
+                                <h5><input type="text" name="phosphorous" placeholder="Phosphorous">
                                     <span>Amount of P kg/acre</span>
                                 </h5>
                             </div>
                             <div class="input-group"> 
-                                <h5><input type="text" id="c" name="potassium" placeholder="Potassium" required>
+                                <h5><input type="text" name="potassium" placeholder="Potassium">
                                     <span>Amount of K kg/acre</span>
                                 </h5>
                             </div>
                             <h4> Soil pH </h4>
 
                             <div class="input-group"> 
-                                <h5><input type="text" id="d" name="ph" placeholder="pH value" required>
+                                <h5><input type="text" name="ph" placeholder="pH value">
+
                                 </h5>
                             </div>
+
                             <h4> Crop Rotation </h4>
                             <div class="input-group">  
                                 <select name="crop_rotation">
                                     <option value="yes">Yes</option>
                                     <option value="no">No</option>
+
                                 </select>
                             </div>
                             <h4>Crop previously cultivated</h4>
                             <div class="input-group"> 
-                                <h5><input type="text" placeholder="Crop name (optional)" name="crop_previously_cultivated">
+                                <h5><input type="text" placeholder="Crop name" name="crop_previously_cultivated" >
+
                                 </h5>
                             </div>
                         </div>
